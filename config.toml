@@ -1,0 +1,69 @@
+baseURL = "https://couyoh.pages.dev/"
+title = "couyoh"
+languageCode = "ja"
+defaultContentLanguage = "ja"
+hasCJKLanguage = true
+paginate = "10"
+theme = "kiss"
+disqusShortname = "couyoh"
+enableRobotsTXT = true
+timeZone = "Asia/Tokyo"
+staticDir = ['static', 'content/static']
+
+
+[params]
+mainSections = ["blog"]
+rss = true
+
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.info]
+enableSocial = true
+homeTitle = "couyoh"
+poweredby = true
+related = true
+codeCopy = true
+taxonomiesCount = true
+
+[params.features]
+disqusOnDemand = true
+mathjax = false
+katex = false
+
+[params.sections_right]
+"/tags" = "Tags"
+"/categories" = "Categories"
+"/about" = "About"
+
+[params.social]
+twitter = "couyoh"
+github = "couyoh"
+email = ""
+linkedin = ""
+facebook = ""
+instagram = ""
+codepen = ""
+rss = "index.xml"
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = true
+    noHl = false
+    tabWidth = 4
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+  

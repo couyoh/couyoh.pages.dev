@@ -1,0 +1,6 @@
+[submodule "content"]
+	path = content
+	url = git@github.com:couyoh/content.git
+[submodule "themes/kiss"]
+	path = themes/kiss
+	url = git@github.com:ribice/kiss.git

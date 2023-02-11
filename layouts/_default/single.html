@@ -1,0 +1,31 @@
+{{ partial "header" . }}
+{{ partial "nav" . }}
+<section class="section">
+  <div class="container">
+    <div class="subtitle tags is-6 is-pulled-right">
+      {{ if .Params.tags }}
+      {{ partial "tags" .Params.tags }}
+      {{ end }}
+    </div>
+    {{if not .Date.IsZero }}<div class="subtitle is-6 date"><time timedate="{{ .Date.Format "2006-1-2" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    {{if ne .Date .Lastmod }}(Last modified: <time timedate="{{ .Lastmod.Format "2006-1-2" }}">{{ .Lastmod.Format "January 2, 2006" }}</time>){{ end }}</div>{{ end }}
+    <h1 class="title">{{ .Title }}</h1>
+    {{ if and (.Site.Params.Info.adsense) (.Params.adsenseTop) }}
+    {{ partial "adsense" . }}
+    {{ end }}
+    <div class="content">
+      {{ .Content }}
+      {{ if .Site.Params.Info.related }}
+      <div class="related">{{ partial "related" . }}</div>
+      {{ end }}
+    </div>
+    {{ if and (.Site.Params.Info.adsense)  (.Params.adsenseBottom) }}
+    {{ partial "adsense" . }}
+    {{ end}}
+  </div>
+</section>
+{{ if (and (.Site.Params.Info.codeCopy) (findRE "<pre" .Content 1)) }}
+    <script src="/js/copycode.js"></script>
+{{ end }}
+{{ partial "disqus" . }}
+{{ partial "footer" . }}

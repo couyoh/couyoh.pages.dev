@@ -1,0 +1,11 @@
+<div class="alert" role="alert">
+  {{ with .Get "text"}}
+    {{ . | safeHTML }}
+  {{ else }}
+    {{ with .Inner}}
+      {{ . | markdownify}}
+    {{ else }}
+      {{ errorf "No valid text"}}
+    {{ end }}
+  {{ end}}
+</div> 

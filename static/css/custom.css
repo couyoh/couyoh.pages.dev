@@ -1,0 +1,26 @@
+.alert {
+  border: 1px solid #FF867A;
+  background: #FFC6C7;
+  padding: 1ex;
+  margin: 1em;
+}
+
+summary {
+  font-weight: bold;
+  display: list-item;
+  counter-increment: list-item 0;
+  list-style: disclosure-closed inside;
+}
+
+details[open] summary {
+  list-style-type: disclosure-open;
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+}
